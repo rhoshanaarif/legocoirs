@@ -26,8 +26,10 @@ const Form = mongoose.model('Form', formSchema);
 app.use(bodyParser.urlencoded({ extended: true }));
 
 // Serve static files
-app.use(express.static('public'));
-
+app.use(express.static('lego-coirs'));
+app.use('/', function(req, res){
+  res.sendFile(path.join(__dirname+'/lego-coirs/index.html'));
+})
 // Handle form submission
 app.post('/submit-form', async (req, res) => {
   try {
