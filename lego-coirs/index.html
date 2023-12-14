@@ -22,7 +22,7 @@
 
      <!-- MAIN CSS -->
      <link rel="stylesheet" href="css/style.css">
-
+     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
 </head>
 <body id="top" data-spy="scroll" data-target=".navbar-collapse" data-offset="50">
 
@@ -38,21 +38,24 @@
 
      <!-- HEADER -->
      <header>
-          <div class="container">
-               <div class="row">
+          <div class="container ">
+               <div class="">
+                    <div class="">
 
-                    <div class="col-md-4 col-sm-5">
-                         <p>MK Fibre</p>
+                         <div class="col-md-4 col-sm-5">
+                              <p>LEGO COIR</p>
+                         </div>
+                              
+                         <div class="col-md-8 col-sm-7 text-align-right">
+                              <span class="phone-icon"><i class="fa fa-phone"></i>+91 7603889527</span>
+                              <span class="phone-icon"><i class="fa fa-phone"></i>+91 9965466366</span>
+                            
+                              <span class="email-icon"><i class="fa fa-envelope-o"></i> <a href="mailto:legocoirandexports@gmail.com">legocoirandexports@gmail.com</a></span>
+                         </div>
+     
                     </div>
-                         
-                    <div class="col-md-8 col-sm-7 text-align-right">
-                         <span class="phone-icon"><i class="fa fa-phone"></i>+91 7603889527</span>
-                         <span class="phone-icon"><i class="fa fa-phone"></i>+91 9965466366</span>
-                       
-                         <span class="email-icon"><i class="fa fa-envelope-o"></i> <a href="mailto:newmartenterprises2019@gmail.com">mkfibers@gmail.com</a></span>
-                    </div>
-
                </div>
+              
           </div>
      </header>
 <!-- Desktop Click to call -->
@@ -69,7 +72,7 @@
 
      <!-- MENU -->
      <section class="navbar navbar-default navbar-static-top" role="navigation">
-          <div class="container">
+          <div class="container" style="display: flex;align-items: center;">
 
                <div class="navbar-header">
                     <button class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
@@ -79,7 +82,7 @@
                     </button>
 
                     <!-- lOGO TEXT HERE -->
-                    <a href="index-2.html"><img src="images/logo.png" width="250" height="75" alt="" /></a>
+                    <a href="index-2.html"><img src="images/lego-logo.png" width="180" height="85" alt="Lego" /></a>
                     <!-- <a href="index.html" class="navbar-brand"><i class="fa fa-nrg-square"></i>New Mart Enterprises</a> -->
                </div>
 
@@ -562,55 +565,62 @@
 
      <!-- MAKE AN APPOINTMENT -->
      <section id="appointment" data-stellar-background-ratio="3">
-          <div class="container">
-               <div class="row">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6 col-sm-6">
+                    <img src="images/appointment-image.jpg" class="img-responsive" alt="">
+                </div>
+                
 
-                    <div class="col-md-6 col-sm-6">
-                         <img src="images/appointment-image.jpg" class="img-responsive" alt="">
+                <div class="col-md-6 col-sm-6">
+                    
+                    <!-- CONTACT FORM HERE -->
+                    <form id="appointment-form" role="form" method="POST" action="/submit-form">
+
+                        <!-- SECTION TITLE -->
+
+                        <h4>It's a Pleasure Doing Business with You.</h4>
+                        <p>Kindly provide us with the following information.</p>
+                        <div class="wow fadeInUp" data-wow-delay="0.8s">
+                            <div class="col-md-6 col-sm-6">
+                                <label for="name">Name</label>
+                                <input type="text" class="form-control" id="name" name="name" placeholder="Full Name">
+                            </div>
+
+                            <div class="col-md-6 col-sm-6">
+                                <label for="email">Email</label>
+                                <input type="email" class="form-control" id="email" name="email" placeholder="Your Email">
+                            </div>
+
+                            <div class="col-md-12 col-sm-12">
+                                <label for="telephone">Phone Number</label>
+                                <input type="tel" class="form-control" id="phone" name="phone" placeholder="Phone">
+                                <label for="Message">Additional Message</label>
+                                <textarea class="form-control" rows="5" id="message" name="message"
+                                    placeholder="Message"></textarea>
+                                <button type="submit" class="form-control" id="cf-submit" name="submit">Submit Button</button>
+                            </div>
+                        </div>
+                    </form>
+
+                    <!-- Form submitted text pop-up -->
+                    <div id="formSubmittedPopup" style="display:none;margin-left: 10px;color: orange;">
+                        Form submitted successfully!
                     </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
-                    <div class="col-md-6 col-sm-6">
-                         <!-- CONTACT FORM HERE -->
-                         <form id="appointment-form" role="form" method="post" action="/submit-form">
+    <!-- Your other HTML content -->
 
-                              <!-- SECTION TITLE -->
-                          
-                              <h4>It's a Pleasure Doing Business with You.</h4>
-                              <p>Kindly provide us with the following information.</p>
-                              <div class="wow fadeInUp" data-wow-delay="0.8s">
-                                  <div class="col-md-6 col-sm-6">
-                                      <label for="name">Name</label>
-                                      <input type="text" class="form-control" id="name" name="name" placeholder="Full Name">
-                                  </div>
-                          
-                                  <div class="col-md-6 col-sm-6">
-                                      <label for="email">Email</label>
-                                      <input type="email" class="form-control" id="email" name="email" placeholder="Your Email">
-                                  </div>
-                          
-                                  <div class="col-md-12 col-sm-12">
-                                      <label for="telephone">Phone Number</label>
-                                      <input type="tel" class="form-control" id="phone" name="phone" placeholder="Phone">
-                                      <label for="Message">Additional Message</label>
-                                      <textarea class="form-control" rows="5" id="message" name="message" placeholder="Message"></textarea>
-                                      <button type="submit" class="form-control" id="cf-submit" name="submit">Submit Button</button>
-                                  </div>
-                              </div>
-                          </form>
-                          
-                    </div>
-
-               </div>
-          </div>
-     </section>
+    
+   
 <br>
 
      <!-- GOOGLE MAP -->
      <section id="google-map">
-    
-          <!--<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3916.0140742027497!2d77.03493151411841!3d11.037570657338897!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ba857bf13d15add%3A0x4fef5baa6059017c!2sSITRA+Bus+stop!5e0!3m2!1sen!2sin!4v1555362534059!5m2!1sen!2sin" width="100%" height="350" frameborder="0" style="border:0" allowfullscreen></iframe>-->
-          <!--<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d31329.467525419455!2d77.10775833740854!3d11.024859571595398!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ba855b5630f846d%3A0xbfaf0134da155f58!2sSulur%2C+Tamil+Nadu!5e0!3m2!1sen!2sin!4v1557812383660!5m2!1sen!2sin" width="100%" height="350" frameborder="0" style="border:0"\ allowfullscreen></iframe>-->
-          <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15684.091518112333!2d77.01510972506085!3d10.65533030816947!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ba8377397d5c2e5%3A0xa1b1445da241e47a!2sLego%20Coir%20%26%20Exports!5e0!3m2!1sen!2sin!4v1702180071283!5m2!1sen!2sin" width="1200" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+          <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15684.091518112333!2d77.01510972506085!3d10.65533030816947!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ba8377397d5c2e5%3A0xa1b1445da241e47a!2sLego%20Coir%20%26%20Exports!5e0!3m2!1sen!2sin!4v1702180071283!5m2!1sen!2sin" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
 
      </section>           
 
@@ -625,19 +635,16 @@
                               <p></p>
 
                               <div class="contact-info">
-							  <p style="color:rgb(255, 136, 0);font-weight: bold;"><i class="fa fa-address-book"></i> M K FIBRE
-239/2A 2B MALAIPALAYAM VILLAGE
-DASANAIKENPALAYAM PO
-JAKKARPALAYAM VIA
-SULUR TK
-COIMBATORE DT
-TAMILNDAU - 642202
-INDIA</p>
+							  <p style="color:rgb(255, 136, 0);font-weight: bold;"><i class="fa fa-address-book"></i> Lego Coir And Exports
+                                        Kallarupatty Devanallir, minnagar, Chinnampalayam, Coimbatore-642003, Tamil Nadu, India</p>
                                    <!--<p><i class="fa fa-phone"></i> +91 7603889527</p>
                                    <p><i class="fa fa-phone"></i> +9965466366</p>-->
                                    <p style="color:rgb(255, 136, 0);font-weight: bold;"><i class="fa fa-phone"></i>+91 7603889527, +91 9965466366, +91 9965766366, +91 7373066366, +91 9842106410</p>
-                                   <p><i class="fa fa-envelope-o"></i> <a href="mailto:rhoshanaarif.work@gmail.com">rhoshanaarif.work@gmail.com</a></p>
-                                   <p><i class="fa fa-envelope-o"></i> <a href="mailto:aravindramu2020@gmail.com">aravindramu2020@gmail.com</a></p>
+                                   <!-- <p><i class="fa fa-envelope-o"></i> <a href="mailto:rhoshanaarif.work@gmail.com">rhoshanaarif.work@gmail.com</a></p>
+                                   <p><i class="fa fa-envelope-o"></i> <a href="mailto:aravindramu2020@gmail.com">aravindramu2020@gmail.com</a></p> -->
+                                   <p><i class="fas fa-envelope"></i> <a href="mailto:rhoshanaarif.work@gmail.com">rhoshanaarif.work@gmail.com</a></p>
+<p><i class="fas fa-envelope"></i> <a href="mailto:aravindramu2020@gmail.com">aravindramu2020@gmail.com</a></p>
+
                               </div>
                          
 
@@ -664,7 +671,7 @@ INDIA</p>
 </div>
                    
                               <div class="copyright-text"> 
-                                   <p>Copyright &copy; 2019 mkfibers.  Design by: <a rel="nofollow" href="http://arientec.com/" target="_parent">Arien Technology</a></p>
+                                   <p>Copyright &copy; 2019 LEGO COIR. 
                                    
                                    
                               </div>

@@ -1,9 +1,13 @@
 const express = require('express');
 const nodemailer = require('nodemailer');
 const mongoose = require('mongoose');
-const bodyParser = require('body-parser');
+// const bodyParser = require('body-parser');
+const path = require('path');
+// const cors = require('cors');
+const http = require('http');
 
 const app = express();
+var server = http.Server(app);
 const PORT = process.env.PORT || 3000;
 
 // Connect to MongoDB
@@ -23,14 +27,17 @@ const formSchema = new mongoose.Schema({
 const Form = mongoose.model('Form', formSchema);
 
 // Body parser middleware
-app.use(bodyParser.urlencoded({ extended: true }));
+app.use(express.urlencoded({ extended: true }));
+app.set("port" , PORT);
 
-// Serve static files
-app.use(express.static('lego-coirs'));
-app.use('/', function(req, res){
-  res.sendFile(path.join(__dirname+'/lego-coirs/index.html'));
-})
-// Handle form submission
+app.use(express.static(path.join(__dirname, "lego-coirs")));
+app.use(express.json());
+
+
+app.get("/", function(req, res){
+  res.sendFile(path.join(__dirname , "lego-coirs/index.html"));
+}
+)
 app.post('/submit-form', async (req, res) => {
   try {
     // Save form data to MongoDB
@@ -40,8 +47,8 @@ app.post('/submit-form', async (req, res) => {
       phone: req.body.phone,
       message: req.body.message,
     });
-
-     await formData.save();
+    console.log('Form data received:', req.body);
+    await formData.save();
 
     // Send email using Nodemailer
     const transporter = nodemailer.createTransport({
@@ -61,13 +68,16 @@ app.post('/submit-form', async (req, res) => {
 
     await transporter.sendMail(mailOptions);
 
-    res.send('Form submitted successfully!');
+    // Respond with a JSON object
+    res.redirect('/');
   } catch (error) {
     console.error(error);
-    res.status(500).send('Internal Server Error');
+    // Respond with a JSON error object
+    res.status(500).json({ error: 'Internal Server Error' });
   }
 });
 
-app.listen(PORT, () => {
-  console.log(`Server is running on http://localhost:${PORT}`);
+
+server.listen(PORT, () => {
+console.log(`Server is running on http://localhost:${PORT}`);
 });
